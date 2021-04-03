@@ -1,6 +1,5 @@
 /* ./src/tailwind.css 
-npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css
-
+npx tailwindcss-cli@latest build ./PPE-Training/ppe-training-fe/register-page/src/assets/css/src/tailwind.css -o ./PPE-Training/ppe-training-fe/register-page/src/assets/css/dist/tailwind.css
 */
 @tailwind base;
 @tailwind components;
@@ -9,19 +8,22 @@ npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css
   @apply px-4 py-2 bg-blue-600 text-white rounded;
 }
 
-
 @tailwind utilities;
 
-.absolute-x{
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-.absolute-y{
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.absolute-x.absolute-y{
-  transform: translate(-50%, -50%);
-}
+.absolute-x {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .absolute-y {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .absolute-x.absolute-y {
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  .bg-black-50{
+    background: rgb(0 0 0 / 49%);
+  }
