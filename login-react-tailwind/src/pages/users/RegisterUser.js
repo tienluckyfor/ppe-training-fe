@@ -2,25 +2,35 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import Alert from '../../components/Alert'
+import Cookies from 'universal-cookie';
 
 function RegisterUser() {
+    const cookies = new Cookies();
+
     const [message, setMessage] = useState(null)
     const createUser = async (e) => {
         e.preventDefault()
         const payload = new FormData(e.target);
         axios.post('http://happy_eyes.test/api/user/register', payload)
             .then(function (response) {
-                setMessage(`Register user success`)
-                console.log(response);
+                // setMessage(`Register user success`)
+                if (response.data.status) {
+                    Alert({ t: `Success`, c: [`Register success`] })
+                    cookies.set('ppe-training-fe-token', response.data.data.token, { path: '/', expires: new Date(Date.now() + 25920000000) });
+                } else
+                    Alert({ t: `Error`, c: [response.data.message] })
+                console.log('response', response);
             })
             .catch(function (error) {
                 const err = error.response.data.message
+                console.log('err', err);
+                Alert({ t: `Err`, c: [err] })
                 setMessage(err)
             });
     }
     return (
         <section className="relative">
-            <Alert message={message} />
+            {/* <Alert message={message} /> */}
 
             <div className="bg-gray-200 flex justify-center lg:justify-center md:justify-start p-0 md:p-10 overflow-x-hidden">
                 <form onSubmit={(e) => createUser(e)} className="max-w-sm bg-white rounded-lg shadow-md py-10 px-8">
