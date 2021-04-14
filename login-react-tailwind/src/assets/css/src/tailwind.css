@@ -1,5 +1,5 @@
 /* ./src/tailwind.css 
-npx tailwindcss-cli@latest build ./PPE-Training/ppe-training-fe/register-page/src/assets/css/src/tailwind.css -o ./PPE-Training/ppe-training-fe/register-page/src/assets/css/dist/tailwind.css
+  npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css
 */
 @tailwind base;
 @tailwind components;
@@ -24,6 +24,6 @@ npx tailwindcss-cli@latest build ./PPE-Training/ppe-training-fe/register-page/sr
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
   }
-  .bg-black-50{
-    background: rgb(0 0 0 / 49%);
+  .bg-black-50 {
+    background: rgb(0 0 0 / 50%);
   }
