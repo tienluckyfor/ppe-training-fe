@@ -338,7 +338,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"PPE\",\n    \"email\":\"ppe@ppe.edu.vn\",\n    \"password\": \"12345678\" \n}",
+							"raw": "{\n    \"name\": \"PPE\",\n    \"email\":\"ppe1@ppe.edu.vn\",\n    \"password\": \"12345678\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
